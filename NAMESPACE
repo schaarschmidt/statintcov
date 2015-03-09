@@ -1,0 +1,5 @@
+export(cmiacov, sciratiotreatcov, scitreatcov, treatcon2cmat, treatcon2cmatratio)
+
+import(multcomp, ggplot2)
+
+importFrom(mratios, contrMatRatio, gsci.ratio)

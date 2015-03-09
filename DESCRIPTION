@@ -1,0 +1,12 @@
+Package: statintcov
+Title: Multiple comparisons of treatments in presence of treatment-covariate interaction
+Version: 0.1.1
+Date: 2015-03-06
+Authors@R: c(person("Frank","Schaarschmidt", role=c("aut","cre"), email="schaarschmidt@biostat.uni-hannover.de"))
+Author: Frank Schaarschmidt [aut, cre]
+Maintainer: Frank Schaarschmidt <schaarschmidt@biostat.uni-hannover.de>
+Description: For linear models with one treatment factor and one covariate, simultaneous confidence intervals for between-treatment-contrasts over a prespecified grid of covariate values can be computed. For use in linear or generalized linear models, matrices of linear combinations for multiple pairwise between-treatment  comparisons can be computed that can be used for plug-in into the linfct argument of glht, package multcomp. 
+Depends: ggplot2, multcomp
+Suggests: drc, MASS
+Imports: mratios
+License: GPL (>=2)
