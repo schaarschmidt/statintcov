@@ -28,11 +28,11 @@ if(!all(COVNAMES %in% names(DAT))){ stop("Not all variables named in covset have
 
 NTAB <- table(DAT[, treatment])
 
-CMAT <- treatcon2cmat(treatcon=treatcon, base=dotargs$base, ntab=NTAB)
-
 if(is.character(treatcon)){
-if(!(treatcon %in% c("Dunnett","Tukey"))){stop("currently, only 'Dunnett' and 'Tukey' are allowed as default treatment contrasts")}
+if(!(treatcon %in% c("Dunnett","Tukey"))){stop("Currently, only 'Dunnett' and 'Tukey' are allowed as default treatment contrasts")}
 }
+
+CMAT <- treatcon2cmat(treatcon=treatcon, base=dotargs$base, ntab=NTAB)
 
 apc <- apply(X=CMAT, MARGIN=1, FUN=function(x){!all(x %in% c(-1,0,1))})
 if(any(apc)){stop(paste("currently, contrast coefficients other than 0, 1, or -1 are not allowed, check cmat in row ", paste(which(apc), collapse=","), sep=""))}

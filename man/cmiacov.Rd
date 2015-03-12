@@ -30,7 +30,7 @@ Based on the call and data set in the model object, matrices are contructed that
 \value{
 A list with items
 \item{linfct}{a matrix of linear combinations of the model parameters, for plugging into the \code{linfct}-argument of \code{glht}, package multcomp}
-\item{datadiff }{ a vector of names for the differences}
+\item{datadiff }{ a data set with names for the differences between treatment levels, the treatment levels contributing as minuend and subtrahend of the differences, and the covariate(s); rows of the data set are ordered as are the rows in the matrix \code{linfct}}
 \item{Xpos}{model matrix for those predictions used as minuend to compute \code{linfct}}
 \item{Xneg}{model matrix for those predictions used as subtrahend to compute \code{linfct}}
 \item{datapos}{}

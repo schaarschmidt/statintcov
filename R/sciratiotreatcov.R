@@ -66,7 +66,6 @@ if(conf.level>1|conf.level<0){stop("conf.level must be a number between 0 and 1"
 
 
 XMAT <- cbind(matrix(rep(1,NOCOV),ncol=1),  matrix(COVSET, ncol=1) )
-#print(XMAT)
 
 CMRCOV <- list()
 CMRCOV[[1]] <- kronecker(XMAT, CMR[["numC"]])
