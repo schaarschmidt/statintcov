@@ -67,7 +67,44 @@ str(cmrpc$rnames)
 
 # a data set containing names of comparisons, treatment levels
 # contributing and covariate values(for later use in plotting)
-str(cmrpc$rnames)
+str(cmrpc$dataratio)
+
+# alternatively, the between-treatment-ratios of interest can be
+# defined as a list in the format of ?contrMatRatio
+# Note that columns correspond to treatment levels
+# as defined in the current definition of the treatment variable
+
+levels(pc$additive)
+
+# numC: matrix indicating  treatments in numerator,
+# denC: indicating treatments in denominator 
+
+cmUser<-list(
+numC=rbind(
+"S1/control"=c(0,1,0),
+"S2/control"=c(0,0,1),
+"S2/S1"=c(0,0,1)),
+
+denC=rbind(
+"S1/control"=c(1,0,0),
+"S2/control"=c(1,0,0),
+"S2/S1"=c(0,1,0))
+)
+
+cmUser
+
+# this matrix can be suplied into the argument treatcon:
+
+cmrpcUser <- cmratioiacov(fitPC, treatment="additive",
+   covset=list("x" = seq(from=1, to=9, by=1)), treatcon=cmUser)
+
+str(cmrpcUser, max.level=1)
+
+# linear combinations of model predcitions for the numerators
+str(cmrpcUser$numC)
+
+# linear combinations of model predcitions for the denominators
+str(cmrpcUser$denC)
 
 }
 
